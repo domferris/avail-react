@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 function Home() {
   const [available, setAvailable] = useState(false);
@@ -8,7 +9,9 @@ function Home() {
       <h1>Map</h1>
       <button onClick={() => setAvailable(!available)}>Available</button>
       <p>{available.toString()}</p>
-      <button>Schedule Hangout</button>
+      <Link to="/schedule">
+        <button>Schedule Hangout</button>
+      </Link>
     </div>
   );
 }

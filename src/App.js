@@ -4,22 +4,21 @@ import Schedule from "./components/Schedule";
 import Calendar from "./components/Calendar";
 import Friends from "./components/Friends";
 import Settings from "./components/Settings";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import Nav from "./components/Nav";
+import { Route, Switch } from "react-router-dom";
 
 function App() {
   return (
     <main>
-      <BrowserRouter>
-        <Switch>
-          <Route path="/" component={Home} exact />
-          <Route path="/schedule" component={Schedule} />
-          <Route path="/calendar" component={Calendar} />
-          <Route path="/friends" component={Friends} />
-          <Route path="/settings" component={Settings} />
-        </Switch>
-      </BrowserRouter>
+      <Switch>
+        <Route path="/" component={Home} exact />
+        <Route path="/schedule" component={Schedule} />
+        <Route path="/calendar" component={Calendar} />
+        <Route path="/friends" component={Friends} />
+        <Route path="/settings" component={Settings} />
+      </Switch>
 
-      {/* TODO render Nav */}
+      <Nav />
     </main>
   );
 }

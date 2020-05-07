@@ -17,7 +17,6 @@ function App() {
         <Route path="/friends" component={Friends} />
         <Route path="/settings" component={Settings} />
       </Switch>
-
       <Nav />
     </main>
   );

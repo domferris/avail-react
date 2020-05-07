@@ -10,7 +10,6 @@ function Schedule() {
   const [date, setDate] = useState(new Date());
   const [startTime, setStartTime] = useState(new Date());
   const [endTime, setEndTime] = useState(new Date());
-  // console.log(typeof date);
   const onDateChange = (date) => {
     setDate(date);
     console.log(date);
@@ -20,14 +19,22 @@ function Schedule() {
     <div>
       <h1>Schedule</h1>
       <Calendar onChange={onDateChange} value={date} />
-      {/* {date.toString()} */}
-      {/* start input on:Change =>  */}
       <p>Month: {date.getMonth() + 1}</p>
       <p>Date: {date.getDate()}</p>
       <p>Start Time: {startTime.toTimeString()}</p>
       <DatePicker
         selected={startTime}
         onChange={(startTime) => setStartTime(startTime)}
+        showTimeSelect
+        showTimeSelectOnly
+        timeIntervals={15}
+        timeCaption="Time"
+        dateFormat="h:mm aa"
+      />
+      <p>End Time: {endTime.toTimeString()}</p>
+      <DatePicker
+        selected={endTime}
+        onChange={(endTime) => setEndTime(endTime)}
         showTimeSelect
         showTimeSelectOnly
         timeIntervals={15}
